@@ -22,20 +22,55 @@
   </head>
   <body>
     <h1>Learning RxJs</h1>
-    <h2>Streams:</h2>
+    <h2>Basics:</h2>
+    <strong
+      >When using reactive programming, data streams are going to be the spine
+      of your application. Events, messages, calls, and even failures are going
+      to be conveyed by a data stream. With reactive programming, you observe
+      these streams and react when a value is emitted.</strong
+    >
     <p>
       <b> Stream</b> is a concept, which are values or events that are emitted
       over time. For example: Filling in a form online
     </p>
     <p>
-      <b> Observable</b> facilties the stream, by proiding a function to emit
-      values and respond to them.
+      <b> Observable</b> facilties the stream, An observable is a function that
+      produces a stream of values to an observer over time.
     </p>
     <p>
-      <b>Observers</b> Any time we subscribe, we create an observer. They read
-      values coming from the observables. They take <b>Next</b>, <b>Error</b>,<b>Complete</b>
+      <b>Observers</b> When you subscribe to an observable, you are an observer.
+      Any time we subscribe, we create an observer. They read values coming from
+      the observables. They take <b>Next</b>, <b>Error</b>,<b>Complete</b>
+      We can also unsubscribe to these observerables when we no longer need to
+      receive further emitted values.
+      <br />
+      We can also create multiple observers/subscriptions on the same
+      observerable, this is good for different areas from same data.
     </p>
-    <ui id="output"> </ui>
+    <h2>Hot vs Cold observerables</h2>
+    <p>
+      What is a Cold observerable? It is the above example, in which an
+      observerable 's producer is only when a subscrip has been activated.
+    </p>
+    <p>
+      A Warm/Hot observerable is when the values are created outside the actual
+      bserverable. A truly hot observable is one that emits values without a
+      subscriber having subscribed to it.
+    </p>
+
+    <h2>Subject</h2>
+    <p>
+      It is an observer and observerable at the same time because it can emit
+      its own values.
+    </p>
+
+    <h2>Operators</h2>
+    <p>
+     They are methods that can be used on the Observerables , and can change the original and return a new observerable.
+     Pure functions.
+    </p>
+    <button id="cancel">Cancel Subscription</button>
+    <ui id="output"></ui>
     <script src="bundle.js"></script>
   </body>
 </html>
